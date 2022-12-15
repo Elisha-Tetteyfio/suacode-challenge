@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Notes from "./components/Notes";
 import { fetchData } from "./store/noteReducer";
+import Form from "./components/Form"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
+import NewNote from "./pages/NewNote";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -10,9 +14,12 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <Notes />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/notes/new" element={<NewNote/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

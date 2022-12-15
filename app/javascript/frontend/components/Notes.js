@@ -6,7 +6,7 @@ const Notes = () => {
   const notes = useSelector(data => data.data)
 
   return(
-    <>
+    <div>
       {notes.map((note) => (
             <Note
               key={note.id}
@@ -14,9 +14,8 @@ const Notes = () => {
               body={note.body}
             />
           ))}
-      <button type="button">New note</button>
-    </>
+    </div>
   )
 } 
 
-export default Notes
+export default Notes;
