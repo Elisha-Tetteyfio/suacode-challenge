@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import Notes from "./components/Notes";
 import { fetchData } from "./store/noteReducer";
 
 const App = () => {
@@ -8,11 +9,9 @@ const App = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  const greet = useSelector(data => data.data)
-  console.log(greet)
   return (
     <div>
-      <>hello</>
+      <Notes />
     </div>
   );
 }
