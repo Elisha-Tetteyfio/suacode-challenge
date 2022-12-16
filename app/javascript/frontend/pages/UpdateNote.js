@@ -29,6 +29,7 @@ const UpdateNote = () => {
     setState({
       ...state, [e.target.name]: e.target.value,
     });
+    dispatch(updateNote(state));
   };
 
   const handleSubmit = () => {
