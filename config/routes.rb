@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/new", to: "notes#new"
   resources :notes
   root "notes#index"
 

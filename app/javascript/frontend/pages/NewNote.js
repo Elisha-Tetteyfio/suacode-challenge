@@ -5,7 +5,7 @@ const NewNote = () => {
   return(
     <>
       <h1>New note</h1>
-      <Form/>
+      <Form noteTitle="" noteBody=""/>
       <a href="/">Back to notes</a>
     </>
   )

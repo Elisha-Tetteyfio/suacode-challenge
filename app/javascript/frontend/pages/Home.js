@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <h1>All notes</h1>
       <Notes/>
-      <a href="/notes/new">Add a note</a>
+      <a href="/new">Add a note</a>
     </>
   )
 } 

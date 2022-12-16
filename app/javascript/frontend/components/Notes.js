@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
+import { fetchData } from "../store/noteReducer";
 import Note from "./Note";
 
 const Notes = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+    // dispatch(postNote());
+  }, [dispatch]);
   const notes = useSelector(data => data.data)
+
 
   return(
     <div>

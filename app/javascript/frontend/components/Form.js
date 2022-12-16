@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import { postNote } from "../store/noteReducer";
 
 const Form = (params) => {
   const {noteTitle, noteBody} = params;
+  const dispatch = useDispatch();
 
   const [state, setState] = useState({
     title: noteTitle,
@@ -17,13 +20,10 @@ const Form = (params) => {
 
   const navigate = useNavigate();
 
-
   const handleSubmit = () => {
-    // dispatch(addReservation(state));
-    
-    // e.preventDefault();
-
-    navigate('/new');
+    dispatch(postNote(state));
+    // e.preventDefault()
+    navigate('/');
   };
 
 
@@ -33,14 +33,20 @@ const Form = (params) => {
         <input
           type="text"
           placeholder="Title"
+          onChange={handle}
+          name="title"
+          value={state.title}
         />
 
         <input
           type="text"
           placeholder="Note"
+          onChange={handle}
+          name="body"
+          value={state.body}
         />
 
-        <button type="button" onClick={handleSubmit()}>Add note</button>
+        <button type="button" onClick={handleSubmit}>Add note</button>
       </form>
     </>
   )
