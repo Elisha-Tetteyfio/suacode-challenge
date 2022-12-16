@@ -22,7 +22,6 @@ const Form = (params) => {
 
   const handleSubmit = () => {
     dispatch(postNote(state));
-    // e.preventDefault()
     navigate('/');
   };
 

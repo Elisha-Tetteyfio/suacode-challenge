@@ -9,7 +9,6 @@ const Notes = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-    // dispatch(postNote());
   }, [dispatch]);
   const notes = useSelector(data => data.data)
 
@@ -19,6 +18,7 @@ const Notes = () => {
       {notes.map((note) => (
             <Note
               key={note.id}
+              id={note.id}
               title={note.title}
               body={note.body}
             />

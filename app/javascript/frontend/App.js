@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import Home from "./pages/home";
 import NewNote from "./pages/NewNote";
+import UpdateNote from "./pages/UpdateNote";
 
 const App = () => {
 
@@ -10,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/new" element={<NewNote/>} />
+        <Route path="/notes/:id/edit" element={<UpdateNote/>} />
       </Routes>
     </BrowserRouter>
   );

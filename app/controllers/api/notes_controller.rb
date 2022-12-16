@@ -19,8 +19,7 @@ class Api::NotesController < ApplicationController
   end
 
   # GET /notes/1/edit
-  def edit
-  end
+  
 
   # POST /notes or /notes.json
   def create
@@ -35,14 +34,11 @@ class Api::NotesController < ApplicationController
 
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
-    respond_to do |format|
-      if @note.update(note_params)
-        format.html { redirect_to note_url(@note), notice: "Note was successfully updated." }
-        format.json { render :show, status: :ok, location: @note }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+
+    if @note.update(note_params)
+      render json: @note
+    else
+      render json: @note.errors, status: :unprocessable_entity
     end
   end
 
