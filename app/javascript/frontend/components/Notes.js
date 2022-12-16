@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
-import { fetchData } from "../store/noteReducer";
+import { deleteNote, fetchData } from "../store/noteReducer";
 import Note from "./Note";
 
 const Notes = () => {
@@ -12,16 +12,24 @@ const Notes = () => {
   }, [dispatch]);
   const notes = useSelector(data => data.data)
 
+  const del = (id) => {
+    dispatch(deleteNote(id));
+    window.location.reload();
+  }
 
   return(
     <div>
       {notes.map((note) => (
+        <div>
             <Note
               key={note.id}
               id={note.id}
               title={note.title}
               body={note.body}
             />
+            <button type="button" onClick={()=>del(note.id)}>Delete note</button>
+            {console.log(note.id)}
+            </div>
           ))}
     </div>
   )
