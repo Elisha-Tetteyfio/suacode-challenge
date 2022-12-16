@@ -26,9 +26,10 @@ const Notes = () => {
               id={note.id}
               title={note.title}
               body={note.body}
+              created_at={note.created_at}
+              updated_at={note.updated_at}
             />
             <button type="button" onClick={()=>del(note.id)}>Delete note</button>
-            {console.log(note.id)}
             </div>
           ))}
     </div>
