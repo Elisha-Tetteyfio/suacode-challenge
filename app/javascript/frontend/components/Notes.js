@@ -20,16 +20,16 @@ const Notes = () => {
   return(
     <div>
       {notes.map((note) => (
-        <div>
+        <div className="card">
             <Note
               key={note.id}
               id={note.id}
               title={note.title}
               body={note.body}
-              created_at={note.created_at}
+              created_at={new Date(note.created_at).toLocaleDateString()}
               updated_at={note.updated_at}
             />
-            <button type="button" onClick={()=>del(note.id)}>Delete note</button>
+            <button type="button" onClick={()=>del(note.id)} className="delete">Delete</button>
             </div>
           ))}
     </div>

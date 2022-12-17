@@ -1,15 +1,60 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.home {
+  width: 80%; 
+  margin: auto;
+  background-color: #bbb;
+  border-radius: 20px; 
+  overflow-y: scroll;
+  height: 100vh;
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px groove #fff;
+  border-radius: 10px;
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.content {
+  margin: 5px;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.body {
+  box-shadow: 0 0 2px 2px inset #bbb;
+  padding: 10px;
+  font-size: large;
+  margin-top: 20px;
+}
+
+.times {
+  font-size: x-small;
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.delete {
+  border: none;
+  outline: none;
+  margin-bottom: 3px;
+  background-color: inherit;
+  color: #a00;
+}
+
+.delete:hover {
+  color: #f00;
+  cursor: pointer;
+}
