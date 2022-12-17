@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Notes from "../components/Notes";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
     <div className="home">
       <h1>All notes</h1>
       <Notes/>
-      <a href="/new">Add a note</a>
+      <Link to="/new" className="newLink">Add a note</Link>
     </div>
   )
 } 

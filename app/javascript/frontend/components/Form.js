@@ -29,23 +29,34 @@ const Form = (params) => {
   return(
     <>
       <form>
-        <input
-          type="text"
-          placeholder="Title"
-          onChange={handle}
-          name="title"
-          value={state.title}
-        />
+        <label>
+          Title
+          <br/>
+          <input
+            type="text"
+            placeholder="Title"
+            onChange={handle}
+            name="title"
+            value={state.title}
+            className="titleForm"
+          />
+        </label>
+        <br/>
+        <label>
+          Note
+          <br/>
+          <textarea
+            type="text"
+            placeholder="Write your note here ..."
+            onChange={handle}
+            name="body"
+            value={state.body}
+            className="bodyForm"
+          />
+        </label>
+        <br/>
 
-        <input
-          type="text"
-          placeholder="Note"
-          onChange={handle}
-          name="body"
-          value={state.body}
-        />
-
-        <button type="button" onClick={handleSubmit}>Add note</button>
+        <button type="button" onClick={handleSubmit} className="formButton">Add note</button>
       </form>
     </>
   )
