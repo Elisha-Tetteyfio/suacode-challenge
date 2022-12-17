@@ -3,7 +3,6 @@ import {useDispatch} from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateNote } from "../store/noteReducer";
 
-
 const UpdateNote = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,28 +39,42 @@ const UpdateNote = () => {
   }
 
   return(
-    <>
+    <div className="newForm">
       <h1>Edit note</h1>
       <p>Changes made are automatically saved</p>
       <form>
-        <input
-          type="text"
-          onChange={handle}
-          name="title"
-          value={state.title}
-        />
+        <label>
+          Title
+          <br/>
+          <input
+            type="text"
+            placeholder="Title"
+            onChange={handle}
+            name="title"
+            value={state.title}
+            className="titleForm"
+          />
+        </label>
+        <br/>
 
-        <input
-          type="text"
-          placeholder="Note"
-          onChange={handle}
-          name="body"
-          value={state.body}
-        />
+        <label>
+          Note
+          <br/>
+          <textarea
+            type="text"
+            onChange={handle}
+            name="body"
+            value={state.body}
+            className="bodyForm"
+          />
+        </label>
+        <br/>
 
-        <button type="button" onClick={handleSubmit} >Update note</button>
+        <button type="button" onClick={handleSubmit} className="formButton">Update note</button>
       </form>
-    </>
+      <a href="/">Back to notes</a>
+    </div>
+    
   )
 } 
 

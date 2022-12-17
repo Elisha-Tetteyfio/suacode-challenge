@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Form from "../components/Form";
 
 const NewNote = () => {
@@ -6,7 +7,7 @@ const NewNote = () => {
     <div className="newForm">
       <h1>New note</h1>
       <Form noteTitle="" noteBody=""/>
-      <a href="/">Back to notes</a>
+      <Link to="/">Back to notes</Link>
     </div>
   )
 } 
